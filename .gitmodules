@@ -1,0 +1,3 @@
+[submodule "Spoons/ScreensAndWindows.spoon"]
+	path = Spoons/ScreensAndWindows.spoon
+	url = ../hammerspoon-screensandwindows.spoon.git
