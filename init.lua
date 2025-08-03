@@ -32,4 +32,3 @@ else
 	utils.showError("Incorrect Keyboard Shortcuts in System Settings", nil, 20)
 	print("Not assiing a hotkey to spoon.ScreensAndWindows:removeCurrentSpaceOnScreenWithMouse()")
 end
-
