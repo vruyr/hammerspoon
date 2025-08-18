@@ -14,7 +14,7 @@ end)
 
 
 hs.hotkey.bind({"cmd", "ctrl"}, "N", function()
-	local ok, _, err = spoon.ScreensAndWindows:addSpaceToScreenWithMouseAndSwitchToIt()
+	local ok, _, _, err = spoon.ScreensAndWindows:addSpaceToScreenWithMouseAndSwitchToIt()
 	if not ok then
 		utils.showError(err, hs.mouse.getCurrentScreen())
 	end
