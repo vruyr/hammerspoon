@@ -1,4 +1,4 @@
-utils = require("utils")
+local utils = require("utils")
 
 hs.loadSpoon("ScreensAndWindows")
 
@@ -10,6 +10,38 @@ end)
 
 hs.hotkey.bind({"cmd", "ctrl"}, "Z", function()
 	spoon.ScreensAndWindows:moveFrontmostWindowToMousePosition()
+end)
+
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "up", function()
+	local window = hs.window.frontmostWindow()
+	local ok, err = spoon.ScreensAndWindows:resizeWindowToNextSize(window, "grow", "height")
+	if not ok then
+		utils.showError(err, hs.mouse.getCurrentScreen())
+	end
+end)
+
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "down", function()
+	local window = hs.window.frontmostWindow()
+	local ok, err = spoon.ScreensAndWindows:resizeWindowToNextSize(window, "shrink", "height")
+	if not ok then
+		utils.showError(err, hs.mouse.getCurrentScreen())
+	end
+end)
+
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "left", function()
+	local window = hs.window.frontmostWindow()
+	local ok, err = spoon.ScreensAndWindows:resizeWindowToNextSize(window, "shrink", "width")
+	if not ok then
+		utils.showError(err, hs.mouse.getCurrentScreen())
+	end
+end)
+
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "right", function()
+	local window = hs.window.frontmostWindow()
+	local ok, err = spoon.ScreensAndWindows:resizeWindowToNextSize(window, "grow", "width")
+	if not ok then
+		utils.showError(err, hs.mouse.getCurrentScreen())
+	end
 end)
 
 
