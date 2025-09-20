@@ -1,4 +1,5 @@
 local utils = require("utils")
+local obsidianAdd = require("experiments-obsidian-add")
 
 hs.loadSpoon("ScreensAndWindows")
 
@@ -69,3 +70,7 @@ end
 hs.hotkey.bind({"cmd", "ctrl"}, "S", function()
 	spoon.ScreensAndWindows:moveMouseToCenterOfNextScreen()
 end)
+
+
+-- Bind Control-Option-Space (OmniFocus Quick Entry default) to add an Obsidian entry
+hs.hotkey.bind({"ctrl", "alt"}, "space", obsidianAdd.experimentsObsidianAdd)
