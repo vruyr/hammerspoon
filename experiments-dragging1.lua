@@ -1,3 +1,6 @@
+local utils = require("utils")
+
+
 hs.hotkey.bind({"cmd", "ctrl"}, "M", function()
 	moveFrontmostWindowToNewSpaceOnScreenWithMouse()
 end)
@@ -48,7 +51,7 @@ function mouseDrag(startPoint, endPoint)
 		coroutine.applicationYield(hs.spaces.MCwaitTime)
 		local spaceId, spaceIndex, spaceCount, err = spoon.ScreensAndWindows:addSpaceToScreen(screenWithMouse, false)
 		if not spaceId then
-			util.showError("Failed to create a new space: " .. tostring(err))
+			utils.showError("Failed to create a new space: " .. tostring(err))
 			return
 		end
 		coroutine.applicationYield(hs.spaces.MCwaitTime)
