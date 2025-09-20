@@ -32,3 +32,8 @@ else
 	utils.showError("Incorrect Keyboard Shortcuts in System Settings", nil, 20)
 	print("Not assiing a hotkey to spoon.ScreensAndWindows:removeCurrentSpaceOnScreenWithMouse()")
 end
+
+
+hs.hotkey.bind({"cmd", "ctrl"}, "S", function()
+	spoon.ScreensAndWindows:moveMouseToCenterOfNextScreen()
+end)
