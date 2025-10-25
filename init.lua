@@ -1,5 +1,5 @@
 local utils = require("utils")
-local obsidianAdd = require("experiments-obsidian-add")
+local obsidianAdd = require("x-obsidian-add")
 
 hs.loadSpoon("ScreensAndWindows")
 
