@@ -1,3 +1,4 @@
+local ipc = require("hs.ipc")
 local utils = require("utils")
 local obsidianAdd = require("x-obsidian-add")
 
