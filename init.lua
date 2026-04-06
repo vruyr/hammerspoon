@@ -46,14 +46,12 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "right", function()
 	end
 end)
 
-
 hs.hotkey.bind({"cmd", "ctrl", "shift"}, "N", function()
 	local ok, _, _, err = spoon.ScreensAndWindows:addSpaceToScreenWithMouseAndSwitchToIt()
 	if not ok then
 		utils.showError(err, hs.mouse.getCurrentScreen())
 	end
 end)
-
 
 if spoon.ScreensAndWindows:didSystemChecksPass() then
 	hs.hotkey.bind({"cmd", "ctrl"}, "X", function()
@@ -67,11 +65,9 @@ else
 	print("Not assiing a hotkey to spoon.ScreensAndWindows:removeCurrentSpaceOnScreenWithMouse()")
 end
 
-
-hs.hotkey.bind({"cmd", "ctrl"}, "S", function()
+hs.hotkey.bind({"cmd"}, "Escape", function()
 	spoon.ScreensAndWindows:moveMouseToCenterOfNextScreen()
 end)
-
 
 -- Bind Control-Option-Space (OmniFocus Quick Entry default) to add an Obsidian entry
 hs.hotkey.bind({"ctrl", "alt"}, "space", obsidianAdd.experimentsObsidianAdd)
