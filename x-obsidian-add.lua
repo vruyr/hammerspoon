@@ -52,6 +52,30 @@ local function experimentsObsidianAdd()
 	hs.urlevent.openURL(url)
 end
 
+local function experimentsObsidianAddAdvUri()
+	local now = os.time()
+
+	local nowIso8601 = tostring(os.date("%Y-%m-%dT%H:%M:%S%z", now))
+	nowIso8601 = nowIso8601:gsub("([%+%-]%d%d)(%d%d)$", "%1:%2")
+
+	local params = {
+		mode = "append",
+		-- vault = "The Vault Name",
+		filename = os.date("%Y-%m-%d", now),
+		data = "(date::" .. nowIso8601 .. ")\n",
+	}
+
+	local parts = {}
+	for k, v in pairs(params) do
+		parts[#parts + 1] = hs.http.encodeForQuery(k) .. "=" .. hs.http.encodeForQuery(v)
+	end
+	local query = table.concat(parts, "&")
+	local url = "obsidian://adv-uri?" .. query
+
+	hs.urlevent.openURL(url)
+end
+
 return {
-	experimentsObsidianAdd = experimentsObsidianAdd
+	experimentsObsidianAdd = experimentsObsidianAdd,
+	experimentsObsidianAddAdvUri = experimentsObsidianAddAdvUri,
 }

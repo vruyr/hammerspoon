@@ -70,4 +70,4 @@ hs.hotkey.bind({"cmd"}, "Escape", function()
 end)
 
 -- Bind Control-Option-Space (OmniFocus Quick Entry default) to add an Obsidian entry
-hs.hotkey.bind({"ctrl", "alt"}, "space", obsidianAdd.experimentsObsidianAdd)
+hs.hotkey.bind({"ctrl", "alt"}, "space", obsidianAdd.experimentsObsidianAddAdvUri)
